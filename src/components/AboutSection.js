@@ -1,24 +1,34 @@
 import React from "react";
 import home1 from '../img/home1.png'
-//Styled
-import styled from 'styled-components'
-import {About, Description, Image, Hide} from "../styles";
+//Style
+import {About, Description, Hide, Image} from "../styles";
+//FramerMotion
+import {motion} from "framer-motion";
 
 const AboutSection = () => {
+    //FramerMotion Animations
+    const titleAnim = {
+        hidden: {opacity: 0},
+        show: {opacity: 1, transition: {duration: 2}}
+    };
+    const container = {
+        hidden: {x: 100},
+        show: {x: 0, transition: {duration: 0.85, ease: "easeOut"}}
+    };
     return (
         <About>
             <Description>
-                <div className="title">
+                <motion.div variants={container} initial="hidden" animate="show" className="title">
                     <Hide>
-                        <h2>We work to make</h2>
+                        <motion.h2 variants={titleAnim} initial="hidden" animate="show">We work to make</motion.h2>
                     </Hide>
                     <Hide>
-                        <h2>the <span>world</span> a better place</h2>
+                        <motion.h2>the <span>world</span> a better place</motion.h2>
                     </Hide>
                     <Hide>
-                        <h2>to live.</h2>
+                        <motion.h2>to live.</motion.h2>
                     </Hide>
-                </div>
+                </motion.div>
                 <p>Contact me for anything.I am professional in everything, you will see </p>
                 <button>Contact me</button>
             </Description>
@@ -28,7 +38,6 @@ const AboutSection = () => {
         </About>
     );
 };
-
 
 
 export default AboutSection;

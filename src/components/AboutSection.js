@@ -13,20 +13,20 @@ const AboutSection = () => {
     };
     const container = {
         hidden: {x: 100},
-        show: {x: 0, transition: {duration: 0.85, ease: "easeOut"}}
+        show: {x: 0, transition: {duration: 0.5, ease: "easeOut", staggerChildren:0.5, when:'afterChildren'}}
     };
     return (
         <About>
             <Description>
                 <motion.div variants={container} initial="hidden" animate="show" className="title">
                     <Hide>
-                        <motion.h2 variants={titleAnim} initial="hidden" animate="show">We work to make</motion.h2>
+                        <motion.h2 variants={titleAnim} >We work to make</motion.h2>
                     </Hide>
                     <Hide>
-                        <motion.h2>the <span>world</span> a better place</motion.h2>
+                        <motion.h2 variants={titleAnim}>the <span>world</span> a better place</motion.h2>
                     </Hide>
                     <Hide>
-                        <motion.h2>to live.</motion.h2>
+                        <motion.h2 variants={titleAnim}>to live.</motion.h2>
                     </Hide>
                 </motion.div>
                 <p>Contact me for anything.I am professional in everything, you will see </p>

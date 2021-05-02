@@ -5,10 +5,13 @@ import {Link} from 'react-router-dom'
 import athlete from '../img/athlete-small.png'
 import theracer from '../img/theracer-small.png'
 import goodtimes from '../img/goodtimes-small.png'
+//Animations
+import {motion} from "framer-motion";
+import {pageAnimation} from '../animation'
 
 const OurWork = () => {
     return (
-        <Work>
+        <Work variants={pageAnimation} initial="hidden" animate='show' exit="exit">
             <Movie>
                 <h2>The Athelete</h2>
                 <div className="line"> </div>
@@ -26,7 +29,7 @@ const OurWork = () => {
             <Movie>
                 <h2>Good Times</h2>
                 <div className="line"> </div>
-                <Link to="good-times">
+                <Link to="/work/good-times">
                     <img src={goodtimes} alt="goodtimes"/>
                 </Link>
             </Movie>
@@ -34,21 +37,24 @@ const OurWork = () => {
     )
 };
 
-const Work = styled.div `
+const Work = styled(motion.div)`
   min-height: 100vh;
   overflow: hidden;
   padding: 5rem 10rem;
+
   h2 {
     padding: 1rem 0;
   }
 `;
 const Movie = styled.div`
   padding-bottom: 10rem;
+
   .line {
     height: 0.5rem;
     background: #cccccc;
     margin-bottom: 3rem;
   }
+
   img {
     width: 100%;
     height: 70vh;

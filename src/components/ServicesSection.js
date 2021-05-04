@@ -1,35 +1,22 @@
 import React from "react";
-import {useInView} from "react-intersection-observer";
 //Animation
-import {useAnimation} from "framer-motion";
-import {fade} from "../animation";
-
+import {scrollReveal} from "../animation";
+import {useScroll} from "./useScroll";
 //Import Icons
 import clock from '../img/clock.svg'
 import diaphragm from '../img/diaphragm.svg'
 import money from '../img/money.svg'
 import teamwork from '../img/teamwork.svg'
 import home2 from '../img/home2.png'
-
 //Styles
 import styled from "styled-components";
 
 import {About, Description, Image} from "../styles";
 
 const ServicesSection = () => {
-    const controls = useAnimation();
-    const [element, view] = useInView({threshold:0.5});
-    console.log(view)
-    // Element is a reference and view shows it's true or false.
-    //threshold:0.5: when it's true? when we are in halfway in.
-    if(view) {
-        //if our element is in view
-        controls.start('show');
-    }else{
-        controls.start('hidden');
-    }
+    const [element,controls] = useScroll();
     return (
-        <Services variants={fade} animate={controls} initial="hidden" ref={element}>
+        <Services variants={scrollReveal} animate={controls} initial="hidden" ref={element}>
             <Description>
                 <h2>High <span>quality</span></h2>
                 <Cards>

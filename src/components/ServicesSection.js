@@ -1,4 +1,9 @@
 import React from "react";
+import {useInView} from "react-intersection-observer";
+//Animation
+import {useAnimation} from "framer-motion";
+import {fade} from "../animation";
+
 //Import Icons
 import clock from '../img/clock.svg'
 import diaphragm from '../img/diaphragm.svg'
@@ -12,8 +17,19 @@ import styled from "styled-components";
 import {About, Description, Image} from "../styles";
 
 const ServicesSection = () => {
+    const controls = useAnimation();
+    const [element, view] = useInView({threshold:0.5});
+    console.log(view)
+    // Element is a reference and view shows it's true or false.
+    //threshold:0.5: when it's true? when we are in halfway in.
+    if(view) {
+        //if our element is in view
+        controls.start('show');
+    }else{
+        controls.start('hidden');
+    }
     return (
-        <Services>
+        <Services variants={fade} animate={controls} initial="hidden" ref={element}>
             <Description>
                 <h2>High <span>quality</span></h2>
                 <Cards>
@@ -85,3 +101,5 @@ const Card = styled.div `
 `
 
 export default ServicesSection;
+
+// useInView is a way that javascript allows you to do something to an element once it is in view

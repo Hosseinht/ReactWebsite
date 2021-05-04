@@ -11,7 +11,7 @@ export const About = styled.div`
 export const Description = styled.div`
   flex: 1;
   padding-right: 1rem;
-
+  z-index: 2;
   h2 {
     font-weight: lighter;
   }
@@ -19,7 +19,7 @@ export const Description = styled.div`
 export const Image = styled.div`
   flex: 1;
   overflow: hidden;
-
+  z-index: 2;
   img {
     width: 100%;
     height: 80vh;

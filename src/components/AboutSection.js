@@ -30,6 +30,7 @@ const AboutSection = () => {
             </Description>
             <Image>
                 <motion.img variants={photoAnim} src={home1} alt="manager's photo"/>
+                {/*initial='hidden' animate="show"*/}
             </Image>
             <Wave/>
         </About>

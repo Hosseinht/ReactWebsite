@@ -4,6 +4,7 @@ import home1 from '../img/home1.png'
 import {About, Description, Hide, Image} from "../styles";
 //FramerMotion
 import {motion} from "framer-motion";
+import {titleAnim, fade, photoAnim} from "../animation";
 
 const AboutSection = () => {
     //FramerMotion Animations
@@ -13,20 +14,20 @@ const AboutSection = () => {
             <Description>
                 <motion.div className="title">
                     <Hide>
-                        <motion.h2 >We work to make</motion.h2>
+                        <motion.h2 variants={titleAnim}>We work to make</motion.h2>
                     </Hide>
                     <Hide>
-                        <motion.h2>the <span>world</span> a better place</motion.h2>
+                        <motion.h2 variants={titleAnim}>the <span>world</span> a better place</motion.h2>
                     </Hide>
                     <Hide>
-                        <motion.h2>to live.</motion.h2>
+                        <motion.h2 variants={titleAnim}>to live.</motion.h2>
                     </Hide>
                 </motion.div>
-                <p>Contact me for anything.I am professional in everything, you will see </p>
-                <button>Contact me</button>
+                <motion.p variants={fade}>Contact me for anything.I am professional in everything, you will see </motion.p>
+                <motion.button variants={fade}>Contact me</motion.button>
             </Description>
             <Image>
-                <img src={home1} alt="manager's photo"/>
+                <motion.img variants={photoAnim} src={home1} alt="manager's photo"/>
             </Image>
         </About>
     );

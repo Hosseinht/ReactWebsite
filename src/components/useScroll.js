@@ -4,7 +4,7 @@ import {useInView} from "react-intersection-observer";
 
 export const useScroll = () => {
     const controls = useAnimation();
-    const [element, view] = useInView({threshold:0.5});
+    const [element, view] = useInView({threshold:0.3});
     console.log(view)
     // Element is a reference and view shows it's true or false.
     //threshold:0.5: when it's true? when we are in halfway in.

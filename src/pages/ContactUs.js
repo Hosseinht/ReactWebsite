@@ -1,4 +1,5 @@
 import React from 'react';
+import ScrollTop from "../components/ScrollTop";
 //Style
 import styled from "styled-components";
 //Animation
@@ -33,6 +34,7 @@ const ContactUs = () => {
                     </Social>
                 </Hide>
             </div>
+            <ScrollTop/>
         </ContactStyle>
     )
 };

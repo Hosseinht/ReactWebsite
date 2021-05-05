@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components'
 import {Link} from 'react-router-dom'
+import ScrollTop from "../components/ScrollTop";
 //Import Images
 import athlete from '../img/athlete-small.png'
 import theracer from '../img/theracer-small.png'
@@ -15,6 +16,7 @@ const OurWork = () => {
     const [element2, controls2] = useScroll();
     return (
         <Work variants={pageAnimation} initial="hidden" animate='show' exit="exit">
+
             <motion.div variants={sliderContainer}>
                 <Frame1 variants={slider}> </Frame1>
                 <Frame2 variants={slider}> </Frame2>
@@ -44,6 +46,7 @@ const OurWork = () => {
                     <img src={goodtimes} alt="goodtimes"/>
                 </Link>
             </Movie>
+            <ScrollTop/>
         </Work>
     )
 };

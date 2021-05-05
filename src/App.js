@@ -7,6 +7,7 @@ import OurWork from "./pages/OurWork";
 import ContactUs from "./pages/ContactUs";
 import MovieDetail from "./pages/MovieDetail";
 import Nav from "./components/nav";
+
 //Router
 import {Route, Switch, useLocation} from 'react-router-dom'
 //Animation
